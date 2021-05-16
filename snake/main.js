@@ -10,7 +10,8 @@ var lastX;
 var lastY;
 
 var food;
-
+var score = 0;
+var time = 0;
 var gameLoop;
 
 window.onload = function() {
@@ -88,6 +89,7 @@ function step(){
           x: lastX,
           y: lastY
         }
+        score++;
         body.push(newBody);
     }
 
@@ -101,6 +103,8 @@ function step(){
 }
 
 function draw(){
+  document.getElementById('score').innerText = score;
+  document.getElementById("time").innerText = time;
   ctx.fillStyle = "grey";
   ctx.fillRect(0,0,500,500);
   
